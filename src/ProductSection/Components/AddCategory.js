@@ -11,7 +11,7 @@ export default function AddCategory({ setShowCategoryPopup, category, fetchAllPr
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`http://localhost:5000/api/category/create-category`, { name: collectionName, category: showCategoryPopup });
+            const response = await axios.post(`https://florail-backend.vercel.app/api/category/create-category`, { name: collectionName, category: showCategoryPopup });
 
             if (response.status === 200) {
                 setShowCategoryPopup(false);
@@ -34,7 +34,7 @@ export default function AddCategory({ setShowCategoryPopup, category, fetchAllPr
 
     const handleUpdate = async () => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/category/edit-category`, {
+            const response = await axios.put(`https://florail-backend.vercel.app/api/category/edit-category`, {
                 oldName: selectedCategory,
                 newName: newCategoryName,
                 category: showCategoryPopup,
@@ -52,7 +52,7 @@ export default function AddCategory({ setShowCategoryPopup, category, fetchAllPr
 
     const handleDelete = async () => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/category/delete-category`, { name: deleteCategory, category: showCategoryPopup });
+            const response = await axios.put(`https://florail-backend.vercel.app/api/category/delete-category`, { name: deleteCategory, category: showCategoryPopup });
 
             if (response.status === 200) {
                 fetchAllProduct();

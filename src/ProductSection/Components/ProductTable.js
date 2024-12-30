@@ -6,7 +6,7 @@
 // const ProductTable = ({ products, category, setRowDataToEdit, fetchAllProduct, setSetshowROwData }) => {
 //     const handleClickDelete = async (_id) => {
 //         try {
-//             const response = await axios.delete("http://localhost:5000/api/product/delete-product", { data: { category, _id } });
+//             const response = await axios.delete("https://florail-backend.vercel.app/api/product/delete-product", { data: { category, _id } });
 //             console.log("response ==>", response);
 
 //             if (response.status === 200) {
@@ -76,7 +76,7 @@ import React from "react";
 export default function ProductTable({ data, setRowDataToEdit, category, fetchAllProduct }) {
     const handleClickDelete = async (id) => {
         try {
-            const response = await axios.delete("http://localhost:5000/api/products", { data: { category, id } });
+            const response = await axios.delete("https://florail-backend.vercel.app/api/products", { data: { category, id } });
             console.log("response ==>", response);
 
             if (response.status === 200) {
@@ -110,15 +110,24 @@ export default function ProductTable({ data, setRowDataToEdit, category, fetchAl
                                     </td>
                                     <td className="py-3 px-4 border-b border-gray-200 text-gray-700">{product.name}</td>
                                     <td className="py-3 px-4 border-b border-gray-200 text-gray-700">
-                                        <button className="text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" onClick={() => setRowDataToEdit(product, true)}>
+                                        <button
+                                            className="text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out"
+                                            onClick={() => setRowDataToEdit(product, true)}
+                                        >
                                             <FontAwesomeIcon icon={faInfoCircle} /> View Details
                                         </button>
                                     </td>
                                     <td className="py-3 px-4 border-b border-gray-200">
-                                        <button className="text-green-500 hover:text-green-700 transition duration-300 ease-in-out mr-2" onClick={() => setRowDataToEdit(product)}>
+                                        <button
+                                            className="text-green-500 hover:text-green-700 transition duration-300 ease-in-out mr-2"
+                                            onClick={() => setRowDataToEdit(product)}
+                                        >
                                             <FontAwesomeIcon icon={faEdit} /> Edit
                                         </button>
-                                        <button className="text-red-500 hover:text-red-700 transition duration-300 ease-in-out ml-4" onClick={() => handleClickDelete(product._id)}>
+                                        <button
+                                            className="text-red-500 hover:text-red-700 transition duration-300 ease-in-out ml-4"
+                                            onClick={() => handleClickDelete(product._id)}
+                                        >
                                             <FontAwesomeIcon icon={faTrash} /> Delete
                                         </button>
                                     </td>

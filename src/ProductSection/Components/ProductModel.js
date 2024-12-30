@@ -15,7 +15,7 @@ const ProductPopup = ({ onClose, category }) => {
 
     const onSubmit = async (data) => {
         try {
-            const response = await axios.post("http://localhost:5000/api/products", { ...data, category });
+            const response = await axios.post("https://florail-backend.vercel.app/api/products", { ...data, category });
             console.log(response.data);
             onClose(); // Close the popup on successful submission
         } catch (error) {
@@ -76,7 +76,12 @@ const ProductPopup = ({ onClose, category }) => {
 
                     <div className="mb-4">
                         <label className="block text-gray-700 mb-2">Description</label>
-                        <Controller name="desc" control={control} defaultValue="" render={({ field }) => <textarea {...field} className="border rounded p-2 w-full" rows="3" />} />
+                        <Controller
+                            name="desc"
+                            control={control}
+                            defaultValue=""
+                            render={({ field }) => <textarea {...field} className="border rounded p-2 w-full" rows="3" />}
+                        />
                     </div>
 
                     <div className="mb-4">

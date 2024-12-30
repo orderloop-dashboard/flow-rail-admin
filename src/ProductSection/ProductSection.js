@@ -16,7 +16,7 @@
 
 // //     const fetchAllProduct = async () => {
 // //         try {
-// //             const response = await axios.get("http://localhost:5000/api/product/get-product");
+// //             const response = await axios.get("https://florail-backend.vercel.app/api/product/get-product");
 // //             console.log("response ==>", response);
 // //             setCategory(response.data.map((el) => el.category));
 // //             setProducts(response.data);
@@ -87,7 +87,7 @@
 
 // //     const fetchTypes = () => {
 // //         axios
-// //             .get(`http://localhost:5000/api/${category}/type`)
+// //             .get(`https://florail-backend.vercel.app/api/${category}/type`)
 // //             .then((response) => {
 // //                 setTypes(response.data);
 // //             })
@@ -108,7 +108,7 @@
 // //         e.preventDefault();
 // //         if (selectedTypeId) {
 // //             axios
-// //                 .put(`http://localhost:5000/api/${category}/type/${selectedTypeId}`, typeData)
+// //                 .put(`https://florail-backend.vercel.app/api/${category}/type/${selectedTypeId}`, typeData)
 // //                 .then(() => {
 // //                     fetchTypes();
 // //                     closeModal();
@@ -118,7 +118,7 @@
 // //                 });
 // //         } else {
 // //             axios
-// //                 .post(`http://localhost:5000/api/${category}/type`, typeData)
+// //                 .post(`https://florail-backend.vercel.app/api/${category}/type`, typeData)
 // //                 .then(() => {
 // //                     fetchTypes();
 // //                     closeModal();
@@ -173,7 +173,7 @@
 // //                                 <button
 // //                                     onClick={() => {
 // //                                         axios
-// //                                             .delete(`http://localhost:5000/api/${category}/type/${type._id}`)
+// //                                             .delete(`https://florail-backend.vercel.app/api/${category}/type/${type._id}`)
 // //                                             .then(() => {
 // //                                                 fetchTypes();
 // //                                             })
@@ -238,7 +238,7 @@
 
 //     const fetchTypes = () => {
 //         axios
-//             .get(`http://localhost:5000/api/${category}/type`)
+//             .get(`https://florail-backend.vercel.app/api/${category}/type`)
 //             .then((response) => {
 //                 setTypes(response.data);
 //             })
@@ -249,7 +249,7 @@
 
 //     const fetchProducts = () => {
 //         axios
-//             .get(`http://localhost:5000/api/${category}/product`)
+//             .get(`https://florail-backend.vercel.app/api/${category}/product`)
 //             .then((response) => {
 //                 setProducts(response.data);
 //             })
@@ -270,7 +270,7 @@
 //         e.preventDefault();
 //         if (selectedTypeId) {
 //             axios
-//                 .put(`http://localhost:5000/api/${category}/type/${selectedTypeId}`, typeData)
+//                 .put(`https://florail-backend.vercel.app/api/${category}/type/${selectedTypeId}`, typeData)
 //                 .then(() => {
 //                     fetchTypes();
 //                     closeTypeModal();
@@ -280,7 +280,7 @@
 //                 });
 //         } else {
 //             axios
-//                 .post(`http://localhost:5000/api/${category}/type`, typeData)
+//                 .post(`https://florail-backend.vercel.app/api/${category}/type`, typeData)
 //                 .then(() => {
 //                     fetchTypes();
 //                     closeTypeModal();
@@ -346,7 +346,7 @@
 //                                     <button
 //                                         onClick={() => {
 //                                             axios
-//                                                 .delete(`http://localhost:5000/api/${category}/type/${type._id}`)
+//                                                 .delete(`https://florail-backend.vercel.app/api/${category}/type/${type._id}`)
 //                                                 .then(() => {
 //                                                     fetchTypes();
 //                                                 })
@@ -390,7 +390,7 @@
 //                                     <button
 //                                         onClick={() => {
 //                                             axios
-//                                                 .delete(`http://localhost:5000/api/${category}/product/${product._id}`)
+//                                                 .delete(`https://florail-backend.vercel.app/api/${category}/product/${product._id}`)
 //                                                 .then(() => {
 //                                                     fetchProducts();
 //                                                 })
@@ -457,7 +457,7 @@ export default function ProductSection() {
 
     const getAllProduct = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/products");
+            const response = await axios.get("https://florail-backend.vercel.app/api/products");
             setAluminumPro(response.data.aluminiumProducts);
             setSteelPro(response.data.steelProducts);
         } catch (error) {

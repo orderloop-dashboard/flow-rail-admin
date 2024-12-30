@@ -46,7 +46,7 @@ export default function AddProductPopup({ setShowUploadPopup, category, rowDataT
             formData.append("files", data.showcaseImages[i]);
         }
 
-        const response = await axios.post("http://localhost:5000/api/products", formData);
+        const response = await axios.post("https://florail-backend.vercel.app/api/products", formData);
 
         if (response.status === 200) {
             setShowUploadPopup(false);
@@ -77,7 +77,7 @@ export default function AddProductPopup({ setShowUploadPopup, category, rowDataT
 
         formData.append("cloudinery_image", JSON.stringify(selectedImages.filter((el) => el.type === "cloudinery")));
 
-        const response = await axios.put(`http://localhost:5000/api/products`, formData);
+        const response = await axios.put(`https://florail-backend.vercel.app/api/products`, formData);
 
         if (response.status === 200) {
             setShowUploadPopup(false);
@@ -160,7 +160,11 @@ export default function AddProductPopup({ setShowUploadPopup, category, rowDataT
                                         <div key={index} className="relative">
                                             <img src={image.url} alt={`Selected Image ${index}`} className="w-full h-32 object-cover rounded-lg" />
                                             {!isReadOnly && (
-                                                <button type="button" onClick={() => removeImage(index)} className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => removeImage(index)}
+                                                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full"
+                                                >
                                                     <FontAwesomeIcon icon={faTimes} />
                                                 </button>
                                             )}
@@ -301,7 +305,11 @@ export default function AddProductPopup({ setShowUploadPopup, category, rowDataT
                                                 />
                                             ))}
                                             {!isReadOnly && (
-                                                <button type="button" onClick={() => addInputField(index, "single")} className="bg-blue-500 text-white px-3 py-1 rounded-lg mt-4">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => addInputField(index, "single")}
+                                                    className="bg-blue-500 text-white px-3 py-1 rounded-lg mt-4"
+                                                >
                                                     <FontAwesomeIcon icon={faPlus} className="text-white" /> Add detail
                                                 </button>
                                             )}
@@ -319,7 +327,11 @@ export default function AddProductPopup({ setShowUploadPopup, category, rowDataT
                                             ))}
 
                                             {!isReadOnly && (
-                                                <button type="button" onClick={() => addInputField(index, "double")} className="bg-blue-500 text-white px-3 py-1 rounded-lg mt-4">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => addInputField(index, "double")}
+                                                    className="bg-blue-500 text-white px-3 py-1 rounded-lg mt-4"
+                                                >
                                                     <FontAwesomeIcon icon={faPlus} className="text-white" /> Add detail
                                                 </button>
                                             )}
